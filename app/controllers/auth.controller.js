@@ -63,7 +63,9 @@ exports.signin = (req, res) => {
         });
       }
 
-      var token = jwt.sign({ id: user.id }, config.secret, {
+      console.log(user.id)
+
+      var token = jwt.sign({ username: user.username }, config.secret, {
         expiresIn: 86400 // 24 hours
       });
 
